@@ -11,8 +11,9 @@
 
 defined('ABSPATH') or die('No script kiddies please!');
 
-add_action( 'load-post-new.php', 'onNewPostPageLoaded' );
-function onNewPostPageLoaded() {
+add_action( 'load-post-new.php', 'onWritePostPageLoad' );
+add_action( 'load-post.php', 'onWritePostPageLoad' );
+function onWritePostPageLoad() {
     wp_enqueue_script( 'plugin_js', plugins_url( 'visual-editor-global-disabler.js', __FILE__ ) );
 }
 
